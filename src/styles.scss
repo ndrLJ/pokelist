@@ -1,0 +1,33 @@
+@import "./styles/reset.scss";
+@import "./styles/responsiveness.scss";
+@import "./styles/colors.scss";
+@import "./styles/buttons.scss";
+
+html {
+  font-family: "Poppins", sans-serif;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+}
+
+main {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.error {
+  flex-direction: column;
+  text-align: center;
+
+  img {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

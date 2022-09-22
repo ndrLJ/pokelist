@@ -1,0 +1,134 @@
+.details-wrapper {
+  margin: 1rem 2rem 2rem 2rem;
+
+  .poke-container {
+    margin: 0 auto;
+    width: 80%;
+
+    .poke-name {
+      flex-direction: column;
+      text-align: center;
+      margin-top: 0;
+      text-transform: capitalize;
+      color: var(--white);
+
+      h1 {
+        position: relative;
+        top: 3rem;
+      }
+
+      h2 {
+        position: relative;
+        bottom: 2rem;
+        font-size: 2rem;
+        opacity: 0.2;
+      }
+    }
+
+    .poke-info {
+      margin-top: 1rem;
+      flex-direction: column;
+      height: 30rem;
+      background: var(--white);
+      border-radius: 4rem;
+
+      .poke-img {
+        height: 7rem;
+        width: 7rem;
+      }
+      .poke-stats {
+        h3 {
+          font-size: 2rem;
+          text-align: center;
+        }
+
+        ol {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          padding-inline-start: 1rem;
+        }
+
+        strong {
+          color: var(--primary-color);
+        }
+
+        .button {
+          margin-top: 0.5rem;
+          a {
+            width: 10rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .poke-name {
+    text-align: end !important;
+
+    h1 {
+      position: relative !important;
+      top: 6rem !important;
+      right: 4rem !important;
+      text-align: end !important;
+    }
+
+    h2 {
+      position: relative !important;
+      right: -0.5rem !important;
+      bottom: 2rem !important;
+      font-size: 4rem !important;
+    }
+  }
+
+  .poke-info {
+    display: block !important;
+    height: 25rem !important;
+    .poke-img {
+      height: 10rem !important;
+      width: 10rem !important;
+      transform: translateY(-6rem) !important;
+    }
+
+    .poke-stats {
+      padding: 0 4rem !important;
+      transform: translateY(-4rem) !important;
+
+      h3 {
+        text-align: left !important;
+      }
+    }
+
+    .button {
+      margin-top: 1.5rem !important;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .poke-name {
+    margin-top: 3rem !important;
+  }
+
+  .poke-info {
+    height: 27rem !important;
+    .poke-img {
+      height: 15rem !important;
+      width: 15rem !important;
+      transform: translate(2rem, -10rem) !important;
+    }
+
+    .poke-stats {
+      transform: translateY(-9rem) !important;
+
+      h3 {
+        font-size: 3rem !important;
+      }
+    }
+
+    .button {
+      margin-top: 2rem !important;
+    }
+  }
+}

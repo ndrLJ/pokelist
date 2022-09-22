@@ -1,0 +1,37 @@
+<div class="main-wrapper">
+  <div class="search-container">
+    <app-search (searchEmit)="getSearch($event)"></app-search>
+    <p [ngClass]="noMatches === true ? 'show' : 'hide'">
+      There are no matches for your search
+    </p>
+  </div>
+  <div class="list-container flex ai-c jc-sb">
+    <ng-container *ngFor="let pokemon of getAllPokemon; let i = index">
+      <a
+        *ngIf="pokemon.status"
+        [routerLink]="['details', pokemon.status.id]"
+        class="pokemon flex ai-c jc-sa"
+      >
+        <div class="poke-info">
+          <h2>{{ pokemon.name }}</h2>
+          <ul class="flex">
+            <li *ngFor="let value of pokemon.status.types">
+              {{ value.type.name }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="poke-img flex ai-c jc-c">
+          <img
+            [src]="pokemon.status.sprites.other.dream_world.front_default"
+            [alt]="pokemon.name"
+          />
+        </div>
+      </a>
+    </ng-container>
+  </div>
+  <div *ngIf="apiError" class="error flex ai-c jc-c">
+    <img src="./assets/images/error.svg" alt="Error no results" />
+    <h4>404<br />Snorlax is working hard to fetch your results!</h4>
+  </div>
+</div>

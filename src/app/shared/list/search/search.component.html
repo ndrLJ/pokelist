@@ -1,0 +1,11 @@
+<div class="form-container">
+  <form class="flex ai-c">
+    <input
+      type="text"
+      #input
+      (keyup)="search(input.value)"
+      placeholder="Search for a pokemon..."
+    />
+    <img src="./assets/images/search.svg" alt="Search Pokemon" class="icon" />
+  </form>
+</div>

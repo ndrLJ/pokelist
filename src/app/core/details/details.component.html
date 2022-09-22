@@ -1,0 +1,35 @@
+<div class="details-wrapper">
+  <app-header></app-header>
+  <ng-template [ngIf]="!isLoading">
+    <div class="poke-container">
+      <div class="poke-name flex">
+        <h1>{{ pokemon[0].name }}</h1>
+        <h2>{{ pokemon[1].names[0].name }}</h2>
+      </div>
+      <div class="poke-info flex ai-c jc-c">
+        <img
+          [src]="pokemon[0].sprites.other.dream_world.front_default"
+          [alt]="pokemon[0].name"
+          class="poke-img"
+        />
+        <article class="poke-stats">
+          <h3>Stats</h3>
+          <ol>
+            <li *ngFor="let value of pokemon[0].stats">
+              {{ value.stat.name }}
+
+              <strong>{{ value.base_stat }}</strong>
+            </li>
+          </ol>
+          <div class="button flex ai-c jc-c">
+            <a [routerLink]="['']" class="btn btn__secondary"> Return </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </ng-template>
+  <div *ngIf="apiError" class="error flex ai-c jc-c">
+    <img src="./assets/images/error.svg" alt="Error no results" />
+    <h4>404<br />Snorlax is working hard to fetch your results!</h4>
+  </div>
+</div>
