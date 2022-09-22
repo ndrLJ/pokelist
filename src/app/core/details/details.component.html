@@ -3,16 +3,16 @@
   <ng-template [ngIf]="!isLoading">
     <div class="poke-container">
       <div class="poke-name flex">
-        <h1>{{ pokemon[0].name }}</h1>
-        <h2>{{ pokemon[1].names[0].name }}</h2>
+        <h1 class="slide-in-right">{{ pokemon[0].name }}</h1>
+        <h2 class="slide-in-left">{{ pokemon[1].names[0].name }}</h2>
       </div>
-      <div class="poke-info flex ai-c jc-c">
+      <div class="poke-info flex ai-c jc-c slide-in-down">
         <img
           [src]="pokemon[0].sprites.other.dream_world.front_default"
           [alt]="pokemon[0].name"
           class="poke-img"
         />
-        <article class="poke-stats">
+        <article class="poke-stats fade-in">
           <h3>Stats</h3>
           <ol>
             <li *ngFor="let value of pokemon[0].stats">
